@@ -1,21 +1,12 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Function to read file contents
-    function readFile(file, callback) {
-        var rawFile = new XMLHttpRequest();
-        rawFile.overrideMimeType("text/plain");
-        rawFile.open("GET", file, true);
-        rawFile.onreadystatechange = function() {
-            if (rawFile.readyState === 4 && rawFile.status == "200") {
-                callback(rawFile.responseText);
-            }
-        }
-        rawFile.send(null);
+const { exec } = require('child_process');
+ 
+// Execute the `pwd` command
+exec('pwd', (error, stdout, stderr) => {
+    if (error) {
+        console.error(`Error executing command: ${error}`);
+        return;
     }
-
-    // Call readFile function to read "flag" file
-    readFile("flag", function(text) {
-        // Output file contents to the body of the HTML
-        document.getElementById("fileContents").textContent = text;
-    });
+ 
+    // Output the result of the `pwd` command
+    console.log(`Current working directory: ${stdout}`);
 });
-
